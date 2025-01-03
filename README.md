@@ -1,1 +1,1 @@
-# cobblemon-fossiltweaks-1.5-fabric
+# cobblemon-fossiltweaks-1.6-fabric
