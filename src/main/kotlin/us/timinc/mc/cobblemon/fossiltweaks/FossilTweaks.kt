@@ -37,7 +37,8 @@ object FossilTweaks : ModInitializer {
 
         FossilTweaksEvents.FOSSIL_TIME_CALCULATION.subscribe { evt ->
             evt.addModificationFunction { time, machine ->
-                val product = machine.resultingFossil?.result ?: throw Error("Why are we calculating fossil time without a fossil result?")
+                val product = machine.resultingFossil?.result
+                    ?: throw Error("Why are we calculating fossil time without a fossil result?")
                 val pokemon = product.create()
                 for ((props, rate) in config.granularRates) {
                     if (PokemonProperties.parse(props).matches(pokemon)) {

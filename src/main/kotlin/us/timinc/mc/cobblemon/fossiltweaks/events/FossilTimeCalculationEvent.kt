@@ -4,7 +4,7 @@ import com.cobblemon.mod.common.block.multiblock.FossilMultiblockStructure
 
 class FossilTimeCalculationEvent(
     val baseRate: Float,
-    val machine: FossilMultiblockStructure
+    val machine: FossilMultiblockStructure,
 ) {
     private val modifiers = mutableListOf<Float>()
     private val modificationFunctions = mutableListOf<(Float, FossilMultiblockStructure) -> Float>()
