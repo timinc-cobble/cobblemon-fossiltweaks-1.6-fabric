@@ -13,6 +13,6 @@ public class FossilMultiblockStructureMixin {
 
     @Inject(method = "startMachine", at = @At("TAIL"), remap = false)
     private void startMachineMixin(World world, CallbackInfo ci) {
-        this.timeRemaining = us.timinc.mc.cobblemon.fossiltweaks.FossilTweaks.config.getFossilMachineTicks();
+        this.timeRemaining = us.timinc.mc.cobblemon.fossiltweaks.FossilTweaks.INSTANCE.calculateTimeToTake((com.cobblemon.mod.common.block.multiblock.FossilMultiblockStructure) ((Object) this));
     }
 }
