@@ -15,7 +15,7 @@ object FossilTweaks : ModInitializer {
     lateinit var config: MainConfig
 
     override fun onInitialize() {
-        config = ConfigBuilder.load(MainConfig::class.java, MOD_ID);
+        config = ConfigBuilder.load(MainConfig::class.java, MOD_ID)
 
         CobblemonEvents.FOSSIL_REVIVED.subscribe { evt ->
             val pokemon = evt.pokemon
