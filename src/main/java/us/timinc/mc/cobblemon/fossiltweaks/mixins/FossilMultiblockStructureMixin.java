@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.callback.*;
 
 @Mixin(FossilMultiblockStructure.class)
 public class FossilMultiblockStructureMixin {
-    @Shadow
+    @Shadow(remap = false)
     private int timeRemaining;
 
     @Inject(method = "startMachine", at = @At("TAIL"), remap = false)
