@@ -11,17 +11,11 @@ import us.timinc.mc.cobblemon.fossiltweaks.FossilTweaks;
 
 @Mixin(FossilMultiblockStructure.class)
 public class FossilMultiblockStructureMixin {
-
     @Shadow
     private int timeRemaining;
 
-    @Inject(method = "tick", at = @At("HEAD"), remap = false)
-    private void tick(World world, CallbackInfo ci) {
-        if (!world.isClient) {
-            int target = FossilTweaks.config.getFossilMachineTicks();
-            if (this.timeRemaining == 14400 && target != 14400) {
-                this.timeRemaining = target;
-            }
-        }
+    @Inject(method = "startMachine", at = @At("TAIL"), remap = false)
+    private void startMachineMixin(World world, CallbackInfo ci) {
+        this.timeRemaining = us.timinc.mc.cobblemon.fossiltweaks.FossilTweaks.config.getFossilMachineTicks();
     }
 }
